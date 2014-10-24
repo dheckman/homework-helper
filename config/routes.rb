@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'problems/new'
+
+  get 'problems/create'
+
+  get 'problems/show'
+
   get 'homepage/index'
 
   get 'users/new'
