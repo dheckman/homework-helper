@@ -18,3 +18,9 @@
 .field_with_errors input, .field_with_errors label {
   color: red;
 }
+
+
+.current_user {
+    color: #ffffff;
+    margin-top: 9px;
+}

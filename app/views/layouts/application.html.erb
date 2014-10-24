@@ -17,7 +17,11 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% if @current_user %>
-        <li class="active"><%= link_to @current_user %></li>
+       <li>
+         <div class="current_user">
+           Logged in as <%= current_user.name %>
+         </div>
+       </li>
       <% else %>
         <li class="active"><a href="/users/new">Sign Up</a></li>
         <li class="active"><a href="/logins/new">Log In</a></li>

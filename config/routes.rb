@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   get 'homepage/index'
 
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'users/create'
 
   get 'logins/new'
 
@@ -16,8 +11,8 @@ Rails.application.routes.draw do
   resource :login, :only => [:new, :create, :destroy]
   delete 'logout' => 'login#destroy'
   # resources :users, only => [:new, :create]
-  resources :users
-  resources :problems, :only => []
+  resources :users, :only => [:new,:create]
+  resources :problems, :only => [:index,:new,:create,:show]
   
   root 'problems#index'
   # The priority is based upon order of creation: first created -> highest priority.
