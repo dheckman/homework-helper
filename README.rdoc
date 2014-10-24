@@ -1,4 +1,6 @@
-his application has user registration and authentication. You can roll this yourself or use a third-party library like Devise.
+README
+
+This application has user registration and authentication. You can roll this yourself or use a third-party library like Devise.
 
 There should be three pages in the application:
 
