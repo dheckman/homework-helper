@@ -10,7 +10,6 @@ class UserTest < ActiveSupport::TestCase
   should_not allow_value("@").for(:email)
   should_not allow_value("     space@email.com").for(:email)
   
-  should have_many(:questions)
-  should have_many(:notes)
+
  
 end

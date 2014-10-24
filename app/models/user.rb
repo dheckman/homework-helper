@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :notes
-  has_many :questions
+  has_many :problems
 
   validates :email,
             presence: true,
@@ -9,9 +9,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  validates :score,
-            presence: true,
-            numericality: { only_integer: true, greater_than_or_equal_to: 0 }  
+  
 
   has_secure_password
 end

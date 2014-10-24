@@ -3,11 +3,14 @@
 one:
   title: MyString
   text: MyText
-  user_id: users(:one)
+  user_id: one
   resolved: false
+  tried: itried
 
 two:
   title: MyString
   text: MyText
-  user_id: 
+  user_id: oneak
   resolved: false
+  tried: itried
+  

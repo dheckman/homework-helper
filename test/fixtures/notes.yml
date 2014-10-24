@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyString
-  user_id: 
-  noteable_id: 
-  noteable_type: Noteable
+  text: MyText
+  user_id: one
+  problem_id: one
 
 two:
-  text: MyString
-  user_id: 
-  noteable_id: 
-  noteable_type: Noteable
+  text: MyText
+  user_id: one
+  problem_id: one

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'login#destroy'
   # resources :users, only => [:new, :create]
   resources :users
-  resources :problems
+  resources :problems, :only => []
   
   root 'problems#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -51,6 +51,8 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     debug_inspector (0.0.2)
+    did_you_mean (0.7.0)
+      binding_of_caller
     erubis (2.7.0)
     execjs (2.2.2)
     faker (1.4.3)
@@ -168,6 +170,7 @@ DEPENDENCIES
   binding_of_caller
   capybara
   coffee-rails (~> 4.0.0)
+  did_you_mean
   faker
   foundation-rails (~> 5.4.5)
   jbuilder (~> 2.0)
