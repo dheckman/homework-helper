@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   get 'logins/destroy'
 
+  resource :login, :only => [:new, :create, :destroy]
+  delete 'logout' => 'login#destroy'
+  resources :users, only => [:new, :create]
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
