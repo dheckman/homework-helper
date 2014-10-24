@@ -1,2 +1,14 @@
-<h1>Problems#new</h1>
-<p>Find me in app/views/problems/new.html.erb</p>
+<%= simple_form_for @problem  do |form| %>
+<div class="row">
+  <h2 class="large-9 large-offset-3 columns">What's your problem?</h2>
+</div>
+<%= form.input :title, label_html: {class: "inline right"} %>
+<%= form.input :text, label_html: {class: "inline right"} %>
+<%= form.input :tried, label_html: {class: "inline right"} %>
+<div class="row">
+  <div class="large-9 large-offset-3 columns">
+    <%= form.button :submit, "Ask" %>
+  </div>
+</div>
+
+<% end %>
