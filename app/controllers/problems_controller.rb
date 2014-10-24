@@ -3,7 +3,7 @@ class ProblemsController < ApplicationController
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
 
   def new
-    @problems = Problems.new
+    @problems = Problem.new
   end
 
   def create
