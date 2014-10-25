@@ -1,25 +1,26 @@
-<h4><%= @problem.user.to_s %> has a problem: 
+<h3><%= @problem.user.to_s %> has a problem: </h3>
+
 <h5><%= @problem.text %></h5>
+
 <h3>Here's what I've tried so far:</h3>
 <%= @problem.tried %>
 <br><br>
+
 <h4>Notes:</h4>
 <% @problem.notes.each do |note| %>
 <li>
-<%= note.text %></li>
-Added by <%= note.user %> <!-- THIS NOT YET WORKING -->
-<% end %>
+  <%= note.text %></li>
+  Added by <%= @current_user %> <!-- THIS NOT YET WORKING -->
+  <% end %>
 
-<h4>Add a note</h4>
-<%= form_for ([@problem, @problem.notes.build]) do |f| %>
+  <h4>Add a note to this problem: </h4>
+  <%= form_for ([@problem, @problem.notes.build]) do |f| %>
   <div class="row">
     <div class="small-12 columns">
       <%= f.text_area :text, class: 'field_label' %><br>
       <div class="actions">
         <%= f.button :submit, class: "radius small" %> <br>
-	  	  </div>
-	    </div>
-	</div>
-          <% end %>
-
-  
+      </div>
+    </div>
+  </div>
+  <% end %>
