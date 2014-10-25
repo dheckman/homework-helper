@@ -12,7 +12,9 @@
   <%= note.text %></li>
   Added by <%= @current_user %> <!-- THIS NOT YET WORKING -->
   <% end %>
-
+  <div class="small-3 columns text-center">
+    <%= pluralize problem.votes.count, "vote" %>
+  </div>
   <h4>Add a note to this problem: </h4>
   <%= form_for ([@problem, @problem.notes.build]) do |f| %>
   <div class="row">
