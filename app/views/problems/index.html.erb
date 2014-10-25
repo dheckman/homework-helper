@@ -1,1 +1,17 @@
-Hi there, I am your homepage!
+<div class="main">
+  <table>
+    <tbody>
+		<% @problems.each do |problem| %>
+			<tr>
+			<td>
+				<p>Asked by <%= problem.user.to_s%>
+					on <%= time_tag problem.created_at %>
+			<h3>Here's my problem:</h3>
+			<%= link_to problem.text, problem_path(problem) %>
+			<h3>Here's what I've tried so far:</h3>
+			<%= problem.tried%></td></tr>
+		<% end %>
+	</tbody>
+  </table>
+</div>
+	

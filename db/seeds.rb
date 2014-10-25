@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Problem.delete_all
+20.times do
+Problem.create!([{title: Faker::Hacker.noun, user_id: 1, 
+                  text: Faker::Hacker.say_something_smart, 
+                  tried: Faker::App.name}])
+end
