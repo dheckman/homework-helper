@@ -7,6 +7,7 @@ class Problem < ActiveRecord::Base
   validates :user, presence: true
   
   def resolved?
-    true
+    problems.where(resolved: true)
   end
+  
 end

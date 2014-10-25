@@ -19,6 +19,17 @@ class ProblemsController < ApplicationController
       render :new
     end
   end
+  
+  def resolve
+    @problem = Problem.find(params[:problem_id])
+    if current_user && current_user.id == @problem.user.id
+      @problem.update_attribute(:resolved, true)
+      @problem.delete
+      redirect_to @problem, success: "yay!"
+    else
+      redirect_to @problem, error: "sorry, you can't do that."
+    end
+  end
 
   def show
     @problem = Problem.find(params[:id])
@@ -31,6 +42,6 @@ class ProblemsController < ApplicationController
   end
   
   def problem_params
-    params.require(:problem).permit(:text, :tried)
+    params.require(:problem).permit(:text, :tried, :resolved)
   end
 end
