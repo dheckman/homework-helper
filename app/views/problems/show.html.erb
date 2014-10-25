@@ -5,7 +5,9 @@
 <br><br>
 <h4>Notes:</h4>
 <% @problem.notes.each do |note| %>
-<%= note.text %>
+<li>
+<%= note.text %></li>
+Added by <%= note.user %>
 <% end %>
 
 <h4>Add a note</h4>

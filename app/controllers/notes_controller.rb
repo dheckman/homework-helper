@@ -3,9 +3,10 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = current_user.notes.build(note_params)
+    @problem = Problem.find(params[:problem_id])
+    @note = @problem.notes.build(note_params)
     if @note.save
-      redirect_to root_path, notice: "You successfully submitted a note!"
+      redirect_to problem_path(@problem), notice: "You successfully submitted a note!"
     else
       render :new
     end
