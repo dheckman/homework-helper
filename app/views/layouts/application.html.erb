@@ -36,7 +36,10 @@
       <% end %>
     </section>
 </nav>
+  <%= display_alert(:notice) %>
+  <%= display_alert(:alert) %>
 <%= yield %>
+
 
 </body>
 </html>
