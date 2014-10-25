@@ -7,7 +7,7 @@
 <% @problem.notes.each do |note| %>
 <li>
 <%= note.text %></li>
-Added by <%= note.user %> <!-- THIS NOT YET WORKING -->
+Added by <%= note.user.to_s %> <!-- THIS NOT YET WORKING -->
 <% end %>
 
 <h4>Add a note</h4>

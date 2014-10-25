@@ -2,7 +2,7 @@ class ProblemsController < ApplicationController
   # before_create :set_problem, only: [:show]
   
   def index
-    @problems = Problem.order(created_at: :asc)
+    @problems = Problem.order(created_at: :asc).paginate(page: params[:page], per_page: 10)
   end
   
   def new
