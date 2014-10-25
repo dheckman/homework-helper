@@ -7,7 +7,8 @@ class NotesController < ApplicationController
   def create
     @problem = Problem.find(params[:problem_id])
     @note = @problem.notes.build(note_params)
-    if @note.save
+    if @note.save && @note.user != @problem.user
+      NoteMailer.new_note(@note.problem.user,@note).deliver    
       redirect_to problem_path(@problem), notice: "You successfully submitted a note!"
     else
       render :new

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'notes/new'
 
-  get 'notes/crate'
+  get 'notes/create'
 
   get 'homepage/index'
 
