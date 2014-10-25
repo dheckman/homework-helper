@@ -42,13 +42,13 @@ gem 'will_paginate', '~> 3.0'
 # gem 'debugger', group: [:development, :test]
 
 gem "quiet_assets", group: :development
+gem "letter_opener", :group => :development
 gem 'simple_form'
 gem 'unicorn'
 gem 'rails_12factor', group: :production
 gem 'foundation-rails', '~> 5.4.5'
 
 group :development, :test do
-  gem "letter_opener"
   gem "better_errors"
   gem "binding_of_caller"
   gem "faker"

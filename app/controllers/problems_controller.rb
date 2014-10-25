@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  before_action :set_problem, only: [:show]
   
   def index
     @problems = Problem.order(created_at: :asc)
@@ -11,7 +12,9 @@ class ProblemsController < ApplicationController
   def create
     @problem = current_user.problems.build(problem_params)
     if @problem.save
-      redirect_to @problem, notice: "You successfully asked a question!"
+      @user = current_user
+      NewProblemMailer.new_problem(@user).deliver
+      redirect_to root_path, notice: "You successfully asked a question!"
     else
       render :new
     end
@@ -22,6 +25,10 @@ class ProblemsController < ApplicationController
   end
   
   private
+  
+  def set_problem
+    @problem = Problem.find(params[:id])
+  end
   
   def problem_params
     params.require(:problem).permit(:text, :tried)
