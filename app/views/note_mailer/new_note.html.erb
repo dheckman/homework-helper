@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h2>Hello <%= @user.name.upcase %>, someone just submitted a new note on your problem! Check out your problem:</h2>
+<%= link_to "your problem", problem_url(@note.problem) %>
+</body>
+
+</html>
