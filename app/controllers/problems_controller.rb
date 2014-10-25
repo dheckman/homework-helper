@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  before_action :set_problem, only: [:show]
+  before_action :set_problem, only: [:show, :vote]
 
   def index
     @problems = Problem.order(created_at: :asc)
@@ -22,6 +22,15 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
+  end
+
+  def vote
+    @vote = @question.votes.build(user: current_user, value: params[:vote][:value])
+    if @vote.save
+      redirect_to @question, success: "Your vote was recorded."
+    else
+      redirect_to @question, error: "There was a problem saving your vote."
+    end
   end
 
   private
