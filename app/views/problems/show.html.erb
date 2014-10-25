@@ -1,2 +1,23 @@
-<h3><%= @problem.title %></h3>
+<h4><%= @problem.user.to_s %> has a problem: 
 <h5><%= @problem.text %></h5>
+<h3>Here's what I've tried so far:</h3>
+<%= @problem.tried %>
+<br><br>
+<h4>Notes:</h4>
+<% @problem.notes.each do |note| %>
+<%= note.text %>
+<% end %>
+
+<h4>Add a note</h4>
+<%= form_for ([@problem, @problem.notes.build]) do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.text_area :text, class: 'field_label' %><br>
+      <div class="actions">
+        <%= f.button :submit, class: "radius small" %> <br>
+	  	  </div>
+	    </div>
+	</div>
+          <% end %>
+
+  

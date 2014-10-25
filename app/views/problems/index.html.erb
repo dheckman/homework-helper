@@ -7,11 +7,11 @@
 				<p>Asked by <%= problem.user.to_s%>
 					on <%= time_tag problem.created_at %>
 			<h3>Here's my problem:</h3>
-			<%= link_to problem.text, problem_path(problem) %>
-			<h3>Here's what I've tried so far:</h3>
-			<%= problem.tried%></td></tr>
+			<%= link_to truncate(problem.text, length: 40), problem_path(problem) %>
+		</td></tr>
 		<% end %>
 	</tbody>
+	
   </table>
 </div>
 	

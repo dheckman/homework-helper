@@ -1,7 +1,7 @@
 class ProblemsController < ApplicationController
   
   def index
-    @problems = Problem.order(created_at: :desc)
+    @problems = Problem.order(created_at: :asc)
   end
   
   def new

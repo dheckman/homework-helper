@@ -10,7 +10,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="/">Home</a></h1>
+      <h1><%= link_to 'Home', root_path %></h1>
     </li>
   </ul>
   <section class="top-bar-section">
@@ -29,6 +29,8 @@
     </ul>
     <% if @current_user %>
       <ul class="left">
+		  <li><%= link_to 'New Problem', new_problem_path %></li>
+
         <li> <%= link_to 'Logout', logins_destroy_path %></li>
       </ul>
       <% end %>
