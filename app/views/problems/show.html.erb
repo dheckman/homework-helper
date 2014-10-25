@@ -11,7 +11,7 @@
 <li>
   <%= note.text %></li>
   Added by <%= @current_user %>
-  At <%= Time.zone.now.day %> <!-- THIS NOT YET WORKING -->
+  The <%= Time.zone.now %> <!-- THIS NOT YET WORKING -->
   <% end %>
   <h4>Add a note to this problem: </h4>
   <%= form_for ([@problem, @problem.notes.build]) do |f| %>
