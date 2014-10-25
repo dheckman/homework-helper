@@ -3,7 +3,7 @@
 <head></head>
 <body>
 <h2>Hello <%= @user.name.upcase %>, thanks for creating a new problem! To view your problem, just click the link below:</h2>
-	<%= @url %>
+	<%= link_to "your problem", problem_url(@problem) %>
 </body>
 
 </html>
