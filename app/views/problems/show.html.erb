@@ -1,10 +1,12 @@
 <div class="probs"><h4><%= @problem.user.to_s %> has a problem: 
-<h5 class="text"><%= @problem.text %></h5>
+<div class="text"><h5><%= @problem.text %></h5></div>
 <h3>Here's what I've tried so far:</h3>
-<%= @problem.tried %>
-<br><br>
+<div class="text"><h5><%= @problem.tried %></h5></div>
+<br><br><% if @problem.user == current_user %>
+
 Has your problem been resolved?
 <%= link_to "Resolve", problem_resolve_path(@problem.id), method: :delete, class: :button %>
+<% end %>
 <h4>Notes:</h4>
 <% @problem.notes.each do |note| %>
 <li>
