@@ -12,10 +12,13 @@ Rails.application.routes.draw do
   get 'logins/create'
 
   get 'logins/destroy'
+  
+  # delete 'resolve' => 'problems#destroy'
 
   resource :login, :only => [:new, :create, :destroy] 
   resources :users, :only => [:new,:create]
   resources :problems, :only => [:index,:new,:create,:show] do
+    delete '/resolve' => 'problems#resolve'
     resources :notes, :only => [:new,:create]
   end
   
