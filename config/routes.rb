@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'notes/new'
-
-  get 'notes/create'
-
-  get 'homepage/index'
 
   delete 'logout' => 'login#destroy'
 
@@ -15,7 +10,9 @@ Rails.application.routes.draw do
   
   # delete 'resolve' => 'problems#destroy'
 
-  resource :login, :only => [:new, :create, :destroy] 
+  resource :login, :only => [:new, :create, :destroy] do
+    get 'logins/destroy' => 'login#destroy'
+  end
   resources :users, :only => [:new,:create]
   resources :problems, :only => [:index,:new,:create,:show] do
     delete '/resolve' => 'problems#resolve'
