@@ -5,7 +5,7 @@
 <br><br>
 <% if @problem.user == current_user %>
 Has your problem been resolved?
-	<%= link_to 'Resolve <i class="fa fa-check fa-2x"></i>'.html_safe, 	problem_resolve_path(@problem.id), method: 	:delete %>
+	<i class="fa fa-check fa-2x"></i><%= link_to 'Resolve', problem_resolve_path(@problem.id), method: :delete, :class => "resolve" %>
 <% end %>
 <h4>Notes:</h4>
 <% @problem.notes.each do |note| %>
@@ -26,4 +26,5 @@ Added by <%= note.user %><br><br>
 </div>
           <% end %>
 
-  
+
+<!--   <li><i class="fa fa-home fa-4x"></i>&nbsp<%= link_to "Home", root_path, :class => "topbar_links" %></li> -->

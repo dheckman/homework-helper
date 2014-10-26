@@ -195,3 +195,15 @@ font-family: 'EB Garamond', serif;
 		color: white;
 		font-size: 18px;
 }
+ .fa-check {
+	color: #79364a;
+}
+
+.resolve {
+	text-decoration: none;
+	color:  #79364a;
+	text-transform: uppercase;
+    font-family: 'primeregular';
+	font-size: 20px;
+	
+}
