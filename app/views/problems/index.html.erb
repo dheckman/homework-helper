@@ -1,20 +1,14 @@
-<div class="main">
-  <table>
+<h4><div class="title">Homework Helper</div></h4>
     <tbody>
 		<% @problems.each do |problem| %>
-			<tr>
-			<td>
+			<div class="content"><tr>
 				<p>Asked by <%= problem.user.to_s%>
 					on <%= time_tag problem.created_at %>
-			<h3>Here's my problem:</h3>
-			<%= link_to truncate(problem.text, length: 40), problem_path(problem) %>
-		</td></tr>
+			<h5>Here's my problem:</h5>
+			<%= link_to truncate(problem.text, length: 40), 				problem_path(problem) %>
+			</tr></div>
 		<% end %>
-	</tbody>
-	
-  </table>
-</div>
-	
+	</tbody>	
 <div class="paginate">
   <%= will_paginate @question %>
 </div>

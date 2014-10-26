@@ -1,10 +1,10 @@
-<h4><%= @problem.user.to_s %> has a problem: 
+<div class="probs"><h4><%= @problem.user.to_s %> has a problem: 
 <h5><%= @problem.text %></h5>
 <h3>Here's what I've tried so far:</h3>
 <%= @problem.tried %>
 <br><br>
 Has your problem been resolved?
-<%= link_to "Resolve", problem_resolve_path(@problem.id), method: :delete %>
+<%= link_to "Resolve", problem_resolve_path(@problem.id), method: :delete, class: :button %>
 <h4>Notes:</h4>
 <% @problem.notes.each do |note| %>
 <li>
@@ -21,6 +21,7 @@ Added by <%= note.user.to_s %> <!-- THIS NOT YET WORKING -->
 	  	  </div>
 	    </div>
 	</div>
+</div>
           <% end %>
 
   
