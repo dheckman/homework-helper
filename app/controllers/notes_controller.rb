@@ -1,7 +1,10 @@
 class NotesController < ApplicationController
   before_action :authenticate
+  before_action :set_note, only: [:destroy, :update]
+  
   
   def new
+    @note = Note.new
   end
 
   def create
@@ -11,12 +14,16 @@ class NotesController < ApplicationController
       NoteMailer.new_note(@note.problem.user,@note).deliver    
       redirect_to problem_path(@problem), notice: "You successfully submitted a note!"
     else
-      render :new
+      redirect_to problem_path(@problem), alert: "Sorry, you must enter a note. "
     end
   end
   
   
   private
+  
+  def set_note
+		@note = Note.find(params[:id])
+  end
   
   def note_params
     params.require(:note).permit(:text)

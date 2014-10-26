@@ -135,7 +135,7 @@ h5 {
     background-color: #e6e6e6;
    }
 .paginate .current {
-	   color: #79364a;
+	   color: #79364a !important;
 	   font-size: 40px;
    	   font-family: 'primeregular';	   
    }
