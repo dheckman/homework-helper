@@ -1,13 +1,17 @@
 <%= simple_form_for @problem  do |form| %>
   <div class="row">
-    <h2 class="large-9 large-offset-3 columns">What's your problem?</h2>
-  </div>
+    <h2>What's your problem?</h2>
+  <div class="large-6 columns">
   <%= form.input :text %>
+  </div>
+  <div class="large-6 columns">
   <%= form.input :tried %>
+  </div>
   <div class="row">
-    <div class="large-9 large-offset-3 columns">
+      <div class="large-12 columns">
       <%= form.button :submit, "Ask" %>
-    </div>
+      </div>
+  </div>
   </div>
 
 <% end %>

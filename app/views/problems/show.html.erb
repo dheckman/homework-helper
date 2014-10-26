@@ -1,25 +1,26 @@
-<h3><%= @problem.user.to_s %> has a problem: </h3>
+<div class="probs"><h4><%= @problem.user.to_s %> has a problem:
+  <div class="text"><h5><%= @problem.text %></h5></div>
+  <h3>Here's what I've tried so far:</h3>
+  <div class="text"><h5><%= @problem.tried %></h5></div>
+  <br><br><% if @problem.user == current_user %>
 
-<h5><%= @problem.text %></h5>
-
-<h3>Here's what I've tried so far:</h3>
-<%= @problem.tried %>
-<br><br>
-Has your problem been resolved?
-<%= link_to "Resolve", problem_resolve_path(@problem.id), method: :delete %>
-<h4>Notes:</h4>
-<% @problem.notes.each do |note| %>
-<li>
-<%= note.text %></li>
-Added by <%= note.user.to_s %> <!-- THIS NOT YET WORKING -->
-<% end %>
-<h4>Add a note</h4>
-<%= form_for ([@problem, @problem.notes.build]) do |f| %>
-  <div class="row">
-    <div class="small-12 columns">
-      <%= f.text_area :text, class: 'field_label' %><br>
-      <div class="actions">
-        <%= f.button :submit, class: "radius small" %> <br>
+  Has your problem been resolved?
+  <%= link_to "Resolve", problem_resolve_path(@problem.id), method: :delete, class: :button %>
+  <% end %>
+  <h4>Notes:</h4>
+  <% @problem.notes.each do |note| %>
+  <li>
+    <%= note.text %></li>
+    Added by <%= note.user.to_s %> <!-- THIS NOT YET WORKING -->
+    <% end %>
+    <h4>Add a note</h4>
+    <%= form_for ([@problem, @problem.notes.build]) do |f| %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.text_area :text, class: 'field_label' %><br>
+        <div class="actions">
+          <%= f.button :submit, class: "radius small" %> <br>
+        </div>
       </div>
     </div>
   </div>

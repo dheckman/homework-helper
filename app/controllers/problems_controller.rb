@@ -2,7 +2,7 @@ class ProblemsController < ApplicationController
   # before_create :set_problem, only: [:show]
 
   def index
-    @problems = Problem.order(created_at: :asc).paginate(page: params[:page], per_page: 10)
+    @problems = Problem.order(created_at: :asc).paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -25,9 +25,9 @@ class ProblemsController < ApplicationController
     if current_user && current_user.id == @problem.user.id
       @problem.update_attribute(:resolved, true)
       @problem.delete
-      redirect_to @problem, success: "yay!"
+      redirect_to @problem, notice: "You've successfully resolved your problem."
     else
-      redirect_to @problem, error: "sorry, you can't do that."
+      redirect_to @problem, alert: "sorry, you can't do that."
     end
   end
 
