@@ -2,18 +2,18 @@
   <div class="text"><h5><%= @problem.text %></h5></div>
   <h3>Here's what I've tried so far:</h3>
   <div class="text"><h5><%= @problem.tried %></h5></div>
-  <br><br><% if @problem.user == current_user %>
-
+  <br><br>
+  <% if @problem.user == current_user %>
   Has your problem been resolved?
-  <%= link_to "Resolve", problem_resolve_path(@problem.id), method: :delete, class: :button %>
+  <%= link_to 'Resolve <i class="fa fa-check fa-2x"></i>'.html_safe, 	problem_resolve_path(@problem.id), method: 	:delete %>
   <% end %>
   <h4>Notes:</h4>
   <% @problem.notes.each do |note| %>
   <li>
     <%= note.text %></li>
-    Added by <%= note.user.to_s %> <!-- THIS NOT YET WORKING -->
+    Added by <%= note.user %><br><br>
     <% end %>
-    <h4>Add a note</h4>
+    <h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
     <%= form_for ([@problem, @problem.notes.build]) do |f| %>
     <div class="row">
       <div class="small-12 columns">
