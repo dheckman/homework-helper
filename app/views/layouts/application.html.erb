@@ -9,18 +9,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>  
-<ul class="breadcrumbs">
+	<!-- <div class="icon-bar six-up"> -->
+		<ul class="breadcrumbs">
+		  <li><i class="fa fa-home fa-4x"></i>&nbsp<%= link_to "Home", root_path, :class => "topbar_links" %></li>
+		
+	  
+		  <% if logged_in? %>
+		  <li><i class="fa fa-question fa-4x"></i>&nbsp&nbsp<%= link_to 'New Problem', new_problem_path,:class => "topbar_links" %></li>
+		  <li><i class="fa fa-sign-out fa-4x"></i>&nbsp<%= link_to "Logout", logins_destroy_path, :class => "topbar_links"%></li>
+	  	  <% else %>
+		  <li><i class="fa fa-plug fa-4x"></i>&nbsp<%= link_to "Login", new_login_path, :class => "topbar_links" %></li>
+			  <li><i class="fa fa-pencil-square-o fa-4x"></i>&nbsp<%= link_to "Sign Up", new_user_path, :class => "topbar_links" %></li>
+		
+		  	  
+	  <% end %>
+	  <% if current_user %>
+	  	<li> <i class="fa fa-user fa-4x"></i>&nbsp<%= link_to "Logged in as #{current_user}","#", {:class => "current"} %> </li>
+		
+		<% end %>
+		
+</ul>
+	<!-- </div> -->
+<!-- <ul class="breadcrumbs">
 <li> <%= link_to 'Home', root_path, :class => "topbar_links" %></li>
 <% if @current_user %>
-	<li><%= link_to "Logged in as #{current_user}", "#", {:class => "topbar_links"} %></li>
+	<li><%= link_to "Logged in as #{current_user}", "#", {:class => "current"} %></li>
 	<li><%= link_to 'New Problem', new_problem_path, :class => "topbar_links"%></li>
 	<li> <%= link_to 'Logout', logins_destroy_path,:class => "topbar_links" %></li>
 <% else %>
 	<li><%= link_to "Sign Up", new_user_path, :class => "topbar_links" %></li>
 	<li><%= link_to "Login", new_login_path, :class => "topbar_links" %></li>
 <% end %>
-  
-</ul>
+
+</ul> -->
   <%= display_alert(:notice) %>
   <%= display_alert(:alert) %>
 <%= yield %>

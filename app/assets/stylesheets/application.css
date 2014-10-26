@@ -154,7 +154,7 @@ button, .button:hover {
 
 .breadcrumbs {
 	background-color: #79364a;
-	padding-left: 350px !important;
+	padding-left: 320px !important;
 	padding-top: 15px !important;
 }
 
@@ -163,7 +163,15 @@ button, .button:hover {
 	margin: 0 auto;
 	font-size: 30px;
     font-family: 'primeregular';
-	color: #79364a;
+	color: #13374e !important;
+
+}
+.current {
+	color: #d3c7c7 !important;
+	text-decoration: none;
+	font-size: 30px;
+    font-family: 'primeregular';
+
 }
 
 .topbar_links:hover {
