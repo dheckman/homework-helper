@@ -110,4 +110,12 @@ h5 {
 .paginate {
 	text-align: center;
 }
+.current_user {
+	margin-right: 20px;
+}
+button, .button {
+	background-color: #b93b61;
+	border-radius: 50px;
+	
+}
 
