@@ -2,8 +2,8 @@
     <tbody>
 		<% @problems.each do |problem| %>
 			<div class="content"><tr>
-				<p>Asked by <%= problem.user.to_s%>
-					on <%= time_tag problem.created_at %>
+				<p>Asked by <%= problem.user.to_s %>
+					on <%= time_tag problem.created_at %></p>
 			<h5>Here's my problem:</h5>
 			<%= link_to truncate(problem.text, length: 40), 				problem_path(problem), :class => "problem" %>
 			</tr></div>

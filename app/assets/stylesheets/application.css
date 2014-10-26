@@ -177,3 +177,21 @@ button, .button:hover {
 .topbar_links:hover {
 	background-color: #e6e6e6;
 }
+
+.fa-question, .fa-sign-out, .fa-home, .fa-plug, .fa-pencil-square-o, .fa-user {
+	color: #637d8d;
+}
+
+p {
+font-family: 'EB Garamond', serif;
+	padding-top: 10px;
+	font-weight: bold;
+	color: #112e40;
+	font-size: 18px;
+}
+#user {
+	font-family: 'EB Garamond', serif;
+		font-weight: bold;
+		color: white;
+		font-size: 18px;
+}
