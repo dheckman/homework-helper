@@ -90,6 +90,18 @@ tr {
 	color: #2d5269;	
     font-family: 'bpdotsunicasesquareregular';
 }
+
+.title_2 {
+	font-size: 50px;
+	color: #2d5269;	
+    font-family: 'bpdotsunicasesquareregular';
+	width: 640px;
+	background-color: rgba(121, 54, 74, 0.2);
+	margin: 0 auto;
+	border-radius: 45px;
+	
+	
+}
 h5 {
 	font-weight: bold;
 	color: white;
@@ -107,32 +119,25 @@ h5 {
 	text-align: center;
 	margin: 0 auto;
 }
-.paginate a{
+.paginate a {
 	display: block;
     border-radius: 3px;
-       box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
-       margin: 1px 2px;
-       padding: 5px 10px;
-       display: inline-block;
-       border-top: 1px solid #fff;
-       text-decoration: none;
-       color: #2d5269;
-       font-size: 20px;
-       font-family: "primeregular", Helvetica, Arial, sans-serif;
-       text-shadow: white 0 1px 0;
-       background-color: #e6e6e6;
-       /*background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
-       background-image: -webkit-linear-gradient(top, #f9f9f9, #eaeaea);
-       background-image: -moz-linear-gradient(top, #f9f9f9, #eaeaea);
-       background-image: -ms-linear-gradient(top, #f9f9f9, #eaeaea);
-       background-image: -o-linear-gradient(top, #f9f9f9, #eaeaea);
-       background-image: linear-gradient(top, #f9f9f9, #eaeaea);
-       filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9f9f9', EndColorStr='#eaeaea');*/ }
-	   
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+    margin: 1px 2px;
+    padding: 5px 10px;
+    display: inline-block;
+	border-top: 1px solid #fff;
+    text-decoration: none;
+    color: #2d5269;
+    font-size: 20px;
+    font-family: 'bpdotsunicasesquareregular';
+    text-shadow: white 0 1px 0;
+    background-color: #e6e6e6;
+   }
 .paginate .current {
-	   color: #2d5269;
+	   color: #79364a;
 	   font-size: 40px;
-   
+   	   font-family: 'primeregular';	   
    }
 
 .current_user {
@@ -141,6 +146,26 @@ h5 {
 button, .button {
 	background-color: #b93b61;
 	border-radius: 50px;
-	
 }
 
+button, .button:hover {
+	background-color: #2d5269;
+}
+
+.breadcrumbs {
+	background-color: #79364a;
+	padding-left: 350px !important;
+	padding-top: 15px !important;
+}
+
+.topbar_links {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 30px;
+    font-family: 'primeregular';
+	color: #79364a;
+}
+
+.topbar_links:hover {
+	background-color: #e6e6e6;
+}

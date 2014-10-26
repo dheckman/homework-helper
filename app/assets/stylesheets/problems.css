@@ -44,8 +44,11 @@ p {
 
 .problem {
 	text-decoration: none !important;
-	color: #2d5269;
+	color: #79364a;
 	margin-top: -4px !important;
+}
+.problem:hover {
+	color: white;
 }
 .text {
 	color: black;
