@@ -9,9 +9,11 @@ Has your problem been resolved?
 <% end %>
 <h4><%= pluralize(@problem.notes.count, "Note") %></h4>
 <% @problem.notes.each do |note| %>
+<ul>
 <li>
-<%= note.text %></li>
-Added by <%= note.user %><br><br>
+Added by <%= note.user %>:
+<%= note.text %></li></ul>
+<br>
 <% end %>
 <h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
 <%= form_for ([@problem, @problem.notes.build]) do |f| %>
