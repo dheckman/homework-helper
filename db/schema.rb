@@ -47,13 +47,4 @@ ActiveRecord::Schema.define(version: 20141025214327) do
     t.string   "email"
   end
 
-  create_table "votes", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "value"
-    t.integer  "voteable_id"
-    t.string   "voteable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

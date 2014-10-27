@@ -1,19 +1,14 @@
 require 'test_helper'
 
 class LoginsControllerTest < ActionController::TestCase
-  # test "should get new" do
-  #   get :new
-  #   assert_response :success
-  # end
-  #
-  # test "should get create" do
-  #   get :create
-  #   assert_response :success
-  # end
-  #
-  # test "should get destroy" do
-  #   get :destroy
-  #   assert_response :success
-  # end
+  context "POST logins#create" do
+    context "when I send invalid info" do
+      setup { post :create, login: { email: users(:one).email, password: "" } }
 
+      should "instantiate an invalid login object" do
+        assert assigns["login"], "Should have a login"
+        assert assigns["login"].invalid?, "Should have an invalid login"
+      end
+    end
+  end
 end

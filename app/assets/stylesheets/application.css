@@ -62,7 +62,7 @@
 .current_user {
     color: #ffffff;
     margin-top: 9px;
-	
+
 }
 body {
 	background-image: url('http://i.imgur.com/cnRGcqe.png');
@@ -79,28 +79,28 @@ table, tbody {
 }
 tbody {
 	border-bottom: 2px;
-	
+
 }
 tr {
 	margin-top: 5px;
-	border-bottom: 2px;	
+	border-bottom: 2px;
 }
 .title {
 	font-size: 70px;
-	color: #2d5269;	
+	color: #2d5269;
     font-family: 'bpdotsunicasesquareregular';
 }
 
 .title_2 {
 	font-size: 50px;
-	color: #2d5269;	
+	color: #2d5269;
     font-family: 'bpdotsunicasesquareregular';
 	width: 640px;
 	background-color: rgba(121, 54, 74, 0.2);
 	margin: 0 auto;
 	border-radius: 45px;
-	
-	
+
+
 }
 h5 {
 	font-weight: bold;
@@ -135,9 +135,9 @@ h5 {
     background-color: #e6e6e6;
    }
 .paginate .current {
-	   color: #79364a;
+	   color: #79364a !important;
 	   font-size: 40px;
-   	   font-family: 'primeregular';	   
+   	   font-family: 'primeregular';
    }
 
 .current_user {
@@ -194,4 +194,23 @@ font-family: 'EB Garamond', serif;
 		font-weight: bold;
 		color: white;
 		font-size: 18px;
+}
+ .fa-check {
+	color: #79364a;
+}
+
+.resolve {
+	text-decoration: none;
+	color:  #79364a;
+	text-transform: uppercase;
+    font-family: 'primeregular';
+	font-size: 20px;
+
+}
+
+button  {
+	background-color: #79364a;
+}
+.notice {
+	background-color: #2d5269 ;
 }
