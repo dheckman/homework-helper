@@ -7,7 +7,7 @@
 Has your problem been resolved?
 	<i class="fa fa-check fa-2x"></i><%= link_to 'Resolve', problem_resolve_path(@problem.id), method: :delete, :class => "resolve" %>
 <% end %>
-<h4>Notes:</h4>
+<h4><%= pluralize(@problem.notes.count, "Note") %></h4>
 <% @problem.notes.each do |note| %>
 <li>
 <%= note.text %></li>
