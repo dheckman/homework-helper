@@ -5,6 +5,7 @@ class LoginsControllerTest < ActionController::TestCase
     context "when I send invalid info" do
       setup { post :create, login: { email: users(:one).email, password: "" } }
 
+      should render_template(:show)
       should "instantiate an invalid login object" do
         assert assigns["login"], "Should have a login"
         assert assigns["login"].invalid?, "Should have an invalid login"

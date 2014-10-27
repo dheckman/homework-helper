@@ -11,7 +11,7 @@
 	<% @problem.notes.each do |note| %>
 	<li>
 		<%= note.text %></li>
-		Added by <%= @current_user %><br><br>
+		Added by <%= @note.user %><br><br>
 		<% end %>
 		<h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
 		<%= form_for ([@problem, @problem.notes.build]) do |f| %>
