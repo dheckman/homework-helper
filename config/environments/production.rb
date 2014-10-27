@@ -88,6 +88,6 @@ Rails.application.configure do
       :domain         => 'heroku.com',
       :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { host: 'www.peaceful-plains-5870.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'peaceful-plains-5870.herokuapp.com'}
   
 end
