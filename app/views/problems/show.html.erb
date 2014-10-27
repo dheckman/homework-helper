@@ -6,23 +6,22 @@
 	<% if @problem.user == current_user %>
 	Has your problem been resolved?
 	<i class="fa fa-check fa-2x"></i><%= link_to 'Resolve', problem_resolve_path(@problem.id), method: :delete, :class => "resolve" %>
-	<% end %>
-	<h4>Notes:</h4>
-	<% @problem.notes.each do |note| %>
-	<li>
-		<%= note.text %></li>
-		Added by <%= @note.user %><br><br>
-		<% end %>
-		<h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
-		<%= form_for ([@problem, @problem.notes.build]) do |f| %>
-		<div class="row">
-			<div class="small-12 columns">
-				<%= f.text_area :text, class: 'field_label' %><br>
-				<div class="actions">
-					<%= f.button :submit, class: "radius small" %> <br>
-				</div>
-			</div>
-		</div>
+<% end %>
+<h4><%= pluralize(@problem.notes.count, "Note") %></h4>
+<% @problem.notes.each do |note| %>
+<li>
+<%= note.text %></li>
+Added by <%= note.user %><br><br>
+<% end %>
+<h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
+<%= form_for ([@problem, @problem.notes.build]) do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.text_area :text, class: 'field_label' %><br>
+      <div class="actions">
+        <%= f.button :submit, class: "radius small" %> <br>
+	  	  </div>
+	    </div>
 	</div>
 	<% end %>
 

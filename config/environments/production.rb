@@ -75,10 +75,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  
+
   config.action_mailer.delivery_method = :smtp
 
-  
+
   ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
       :port           => '587',
@@ -88,6 +88,6 @@ Rails.application.configure do
       :domain         => 'heroku.com',
       :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { host: 'www.peaceful-plains-5870.herokuapp.com'}
-  
+  config.action_mailer.default_url_options = { host: 'peaceful-plains-5870.herokuapp.com'}
+
 end
