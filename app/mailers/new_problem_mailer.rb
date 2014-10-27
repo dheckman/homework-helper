@@ -1,5 +1,5 @@
 class NewProblemMailer < ActionMailer::Base
-  default from: "info@homeworkhelper.com"
+  # default from: "info@homeworkhelper.com"
   
   def new_problem(user,problem)
     @user = user

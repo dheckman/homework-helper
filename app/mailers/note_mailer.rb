@@ -1,5 +1,5 @@
 class NoteMailer < ActionMailer::Base
-  default from: "info@homeworkhelper.com"
+  # default from: "info@homeworkhelper.com"
   
   def new_note(user,note)
     @user = user
