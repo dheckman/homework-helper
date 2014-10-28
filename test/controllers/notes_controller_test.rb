@@ -8,9 +8,9 @@ class NotesControllerTest < ActionController::TestCase
     {text: ""}
   end
 
-  
+
   context "POST :create" do
-    
+
     context "when I send invalid information" do
       setup { post :create, { note: invalid_note_attributes } }
 
@@ -21,11 +21,11 @@ class NotesControllerTest < ActionController::TestCase
 
     context "when I send valid information" do
       setup { post :create, { note: valid_note_attributes } }
-      
+
       should "create a new note" do
         assert_response :success
       end
     end
-  
+
   end
 end
