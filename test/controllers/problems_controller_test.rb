@@ -15,7 +15,7 @@ class ProblemsControllerTest < ActionController::TestCase
      resolved: ""}
   end
 
-  context "POST :create" do
+  context "POST problems#create" do
 
     context "when I send invalid information" do
       setup { post :create, { problem: invalid_problem_attributes } }
