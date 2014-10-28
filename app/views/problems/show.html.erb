@@ -10,9 +10,8 @@
 <h4><%= pluralize(@problem.notes.count, "Note") %></h4>
 <% @problem.notes.each do |note| %>
 <ul>
-<li>
 Added by <%= note.user %>:
-<%= note.text %></li></ul>
+<%= note.text %></ul>
 <br>
 <% end %>
 <h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
