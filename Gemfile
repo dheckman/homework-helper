@@ -41,6 +41,7 @@ gem 'will_paginate', '~> 3.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'jquery-ui-rails'
 gem "quiet_assets", group: :development
 gem "letter_opener", :group => :development
 gem 'simple_form'

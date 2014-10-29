@@ -1,14 +1,21 @@
 <div class="title">Homework Helper</div>
     <tbody>
 		<% @problems.each do |problem| %>
+            <div id="<%= dom_id(problem) %>">
 			<div class="content"><tr>
 				<p>Asked by <%= problem.user.to_s %>
-					on <%= problem.created_at.strftime("%A, %B %d, %Y at %l:%M%P") %></p>
+				on <%= problem.created_at.strftime("%A, %B %d, %Y at %l:%M%P") %></p>
 			<h5>Here's my problem:</h5>
-			<%= link_to truncate(problem.text, length: 40), 				problem_path(problem), :class => "problem" %>
-			</tr></div>
-		<% end %>
-	</tbody>	
+			    <%= link_to truncate(problem.text, length: 40), problem_path(problem), :class => "problem" %>
+			</tr>
+            <% if problem.user == current_user %>
+                <h5>Has your problem been resolved?</h5>
+                <i class="fa fa-check fa-2x"></i><%= link_to 'Resolve', problem_resolve_path(problem.id),remote: true, method: :delete, data: { confirm: 'Are you sure?' }, :class => "resolve" %>
+            <% end %>
+            </div>
+            </div>
+        <% end %>
+    </tbody>
 <div class="paginate">
   <%= will_paginate @question %>
 </div>
