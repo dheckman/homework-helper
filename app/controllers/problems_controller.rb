@@ -23,17 +23,15 @@ class ProblemsController < ApplicationController
   def resolve
     @problem = Problem.find(params[:problem_id])
     if current_user.id == @problem.user.id
+      @problem.destroy
       respond_to do |format|
         format.html do
           @problem.update_attribute(:resolved, true)
-          @problem.delete
             redirect_to @problem, notice: "You've successfully resolved your problem."
         end
 
         format.js do
-          @problem.update_attribute(:resolved, true)
-          @problem.delete
-          render :resolve, status: :ok
+          render 'problems/resolve', layout: false
         end
       end
     end

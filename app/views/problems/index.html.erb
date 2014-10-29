@@ -2,7 +2,8 @@
     <tbody>
 		<% @problems.each do |problem| %>
             <div id="<%= dom_id(problem) %>">
-			<div class="content"><tr>
+			<div class="content">
+            <tr>
 				<p>Asked by <%= problem.user.to_s %>
 				on <%= problem.created_at.strftime("%A, %B %d, %Y at %l:%M%P") %></p>
 			<h5>Here's my problem:</h5>
@@ -18,4 +19,5 @@
     </tbody>
 <div class="paginate">
   <%= will_paginate @question %>
+</div>
 </div>
