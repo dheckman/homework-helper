@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1025464775">
+    <data-source source="LOCAL" name="Rails homework_helper: development" uuid="3d50a2c9-1f10-4976-aca1-99e476a5ed6b">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:homework_helper_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails homework_helper: test" uuid="c05468bf-e74c-43b0-82dd-44363a8c74b1">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:homework_helper_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails homework_helper: production" uuid="22fbdf41-1484-45a3-96b9-28feb19cdc44">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:homework_helper_production</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
