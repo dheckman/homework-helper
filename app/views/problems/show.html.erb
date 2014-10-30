@@ -1,21 +1,21 @@
-<div class="probs">
-	<h4><%= @problem.user.to_s %> has a problem:
-		<div class="text"><h5><%= @problem.text %></h5></div>
-		<h3>Here's what I've tried so far:</h3>
-		<div class="text"><h5><%= @problem.tried %></h5></div>
-		<br><br>
-		<% if @problem.user == current_user %>
-		Has your problem been resolved?
-		<i class="fa fa-check fa-2x"></i><%= link_to 'Resolve', problem_resolve_path(@problem.id),remote: true, method: :delete, :class => "resolve" %>
+<div class="probs"><h4><%= @problem.user.to_s %> has a problem:
+	<div class="text"><h5><%= @problem.text %></h5></div>
+	<h3>Here's what I've tried so far:</h3>
+	<div class="text"><h5><%= @problem.tried %></h5></div>
+	<br><br>
+	<% if @problem.user == current_user %>
+	Has your problem been resolved?
+	<i class="fa fa-check fa-2x"></i><%= link_to 'Resolve', problem_resolve_path(@problem.id), method: :delete, :class => "resolve" %>
+	<% end %>
+	<h4><%= pluralize(@problem.notes.count, "Note") %></h4>
+	<% @problem.notes.each do |note| %>
+	<ul>
+		Added by <%= note.user %>:
+		<%= note.text %></ul>
+		<br>
 		<% end %>
-		<h4><%= pluralize(@problem.notes.count, "Note") %></h4>
-
-		<div id="notes">
-			<%= render @notes %>
-		</div>
-
 		<h4>Add a note to <%= @problem.user.to_s %>'s problem:</h4>
-		<%= form_for ([@problem, @problem.notes.build]), remote:true  do |f| %>
+		<%= form_for ([@problem, @problem.notes.build]) do |f| %>
 		<div class="row">
 			<div class="small-12 columns">
 				<%= f.text_area :text, class: 'field_label' %><br>
@@ -24,9 +24,5 @@
 				</div>
 			</div>
 		</div>
+		<% end %>
 	</div>
-	<% end %>
-</div>
-
-
-<!--   <li><i class="fa fa-home fa-4x"></i>&nbsp<%= link_to "Home", root_path, :class => "topbar_links" %></li> -->

@@ -20,18 +20,18 @@ class ProblemsController < ApplicationController
     end
     ################ testing Javacript in controller
     respond_to do |format|
-      format.html do
-        if @problem.save
-          redirect_to @problem
-        else
-          render "problems/show"
+        format.html do
+          if @problem.save
+            return
+          else
+            render "problem/show"
+          end
         end
-      end
       format.js do
-        if @problem.save
-          render "problems/create", status: :created
+        if @problem.update_attribute.save
+          render "problem/create", status: :created
         else
-          render "problems/create", status: :accepted
+          render "problem/create", status: :accepted
         end
       end
     end
@@ -41,17 +41,16 @@ class ProblemsController < ApplicationController
     @problem = Problem.find(params[:problem_id])
     if current_user && current_user.id == @problem.user.id
       @problem.update_attribute(:resolved, true)
-          ##############  @problem.delete I'm going to comment this to not elimininated the problem and this one stays on ther webpage.
+    ##############  @problem.delete I'm going to comment this to not elimininated the problem and this one stays on ther webpage.
       redirect_to @problem, notice: "You've successfully resolved your problem."
     else
-      redirect_to @problem, alert: "Sorry, you can't do that."
+      redirect_to @problem, alert: "sorry, you can't do that."
     end
   end
 
+
   def show
     @problem = Problem.find(params[:id])
-    @notes = @problem.notes
-    @note = Note.new
   end
 
   private
